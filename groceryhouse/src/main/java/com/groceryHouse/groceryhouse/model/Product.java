@@ -34,17 +34,17 @@ public class Product {
 
     @Embedded
     private ContactInformation contactInformation;
-//    @OneToMany(mappedBy = "Product",cascade = CascadeType.ALL,orphanRemoval = true)
-//    private List<Order> orders= new ArrayList<>();
-//    @ElementCollection
-//    @Column(length = 1000)
-//    private List<String> images;
-//
-//
-//    private boolean open;
-//    @JsonIgnore
-//    @OneToMany(mappedBy = "Product",cascade = CascadeType.ALL)
-//    private   List<Food> foods = new ArrayList<>();
+    @OneToMany(mappedBy = "product",cascade = CascadeType.ALL,orphanRemoval = true)
+    private List<Order> orders= new ArrayList<>();
+    @ElementCollection
+    @Column(length = 1000)
+    private List<String> images;
+
+
+    private boolean open;
+    @JsonIgnore
+    @OneToMany(mappedBy = "product",cascade = CascadeType.ALL)
+    private   List<Food> foods = new ArrayList<>();
 
     
 
